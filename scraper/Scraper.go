@@ -24,10 +24,7 @@ func FindLugarByID(id string) maps.PlaceDetailsResult {
 		SessionToken: maps.PlaceAutocompleteSessionToken{},
 		Region:       "",
 	}
-	DetalleLugar, err := c.PlaceDetails(context.Background(), result)
-	if err != nil {
-		log.Fatal(err)
-	}
+	DetalleLugar, _ := c.PlaceDetails(context.Background(), result)
 
 	return DetalleLugar
 }
@@ -50,10 +47,8 @@ func GetIDMunicipio(lugar string) string {
 		LocationBiasNorthEast: nil,
 	}
 
-	result, errorFindPlace := c.FindPlaceFromText(context.Background(), findLugar)
-	if errorFindPlace != nil {
-		log.Fatal(errorFindPlace)
-	}
+	result, _ := c.FindPlaceFromText(context.Background(), findLugar)
+
 	var placeID string
 	for _, can := range result.Candidates {
 		placeID = can.PlaceID
