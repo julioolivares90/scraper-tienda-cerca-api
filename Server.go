@@ -17,7 +17,7 @@ func runServer() {
 
 	server.GET("api/find-lugar", handlers.GetLugar)
 
-	server.Logger.Fatal(server.Start(getPort()))
+	server.Logger.Fatal(server.Start(":" + getPort()))
 }
 
 func getPort() string {
