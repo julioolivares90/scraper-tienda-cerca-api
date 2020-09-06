@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	apiKey = "AIzaSyA372lgSayQt_UW6EIb4IAjEABGg2elWrg"
+	apiKey = "AIzaSyD5KQZ5TcgY--FYBrJC6iF2FmRnom-TgRg"
 )
 
 func FindLugarByID(id string) maps.PlaceDetailsResult {
